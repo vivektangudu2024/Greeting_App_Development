@@ -28,4 +28,10 @@ public class GreetingController {
     public String sayHello(){
         return greetingService.sayHello();
     }
+
+    @GetMapping("/ByName")
+    public String greetingWithUserName(@RequestParam(value = "firstName", defaultValue = "") String firstName,
+                                       @RequestParam(value = "lastName", defaultValue = "") String lastName) {
+        return greetingService.greetingWithName(firstName, lastName);
+    }
 }
