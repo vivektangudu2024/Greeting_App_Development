@@ -4,6 +4,8 @@ import com.example.greetingapp.repository.GreetingAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class GreetingService implements IGreetingService{
@@ -37,5 +39,10 @@ public class GreetingService implements IGreetingService{
     @Override
     public Greeting findGreetingById(Integer id) {
         return repository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Greeting> findGreetings() {
+        return repository.findAll();
     }
 }
