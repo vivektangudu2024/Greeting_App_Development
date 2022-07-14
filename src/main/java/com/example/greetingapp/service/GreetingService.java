@@ -33,4 +33,9 @@ public class GreetingService implements IGreetingService{
     public Greeting saveGreetings(Greeting greeting) {
         return repository.save(greeting);
     }
+
+    @Override
+    public Greeting findGreetingById(Integer id) {
+        return repository.findById(id).orElse(null);
+    }
 }

@@ -36,4 +36,9 @@ public class GreetingController {
     public Greeting addGreeting(@RequestBody Greeting greeting){
         return greetingService.saveGreetings(greeting);
     }
+
+    @GetMapping("/findById/{id}")
+    public Greeting getGreetingById(@PathVariable Integer id){
+        return greetingService.findGreetingById(id);
+    }
 }

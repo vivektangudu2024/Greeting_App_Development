@@ -9,4 +9,6 @@ public interface IGreetingService {
     String greetingWithName(String firstName, String lastName);
 
     Greeting saveGreetings(Greeting greeting);
+
+    Greeting findGreetingById(Integer id);
 }
