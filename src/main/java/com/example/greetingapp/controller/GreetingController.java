@@ -19,7 +19,7 @@ public class GreetingController {
 
     @GetMapping("")
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name){
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+        return new Greeting((int) counter.incrementAndGet(), String.format(template, name));
     }
 
     @GetMapping("/hello")
@@ -46,5 +46,10 @@ public class GreetingController {
     @GetMapping("/allGreetings")
     public List<Greeting> findAllGreetings(){
         return greetingService.findGreetings();
+    }
+
+    @PutMapping("/editGreeting/{id}")
+    public Greeting editGreeting(@RequestBody Greeting greeting, @PathVariable Integer id){
+        return greetingService.editGreeting(greeting, id);
     }
 }

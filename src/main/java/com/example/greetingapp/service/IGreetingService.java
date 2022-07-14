@@ -15,4 +15,6 @@ public interface IGreetingService {
     Greeting findGreetingById(Integer id);
 
     List<Greeting> findGreetings();
+
+    Greeting editGreeting(Greeting greeting, Integer id);
 }
